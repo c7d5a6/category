@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{amssymb, amsthm, amsmath}
+\usepackage{tikz-cd}
+
+\newcommand {\cat}{%
+	\mathbf%
+}
+\newcommand {\domain}[1] {%
+	\mathrm{dom}(#1)%
+}
+\newcommand {\codomain}[1] {%
+	\mathrm{cod}(#1)%
+}
+\newcommand {\idarrow}[1][] {%
+	\mathbf{Id}_{#1}%
+}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{ex}{Exercise}
+
+\title{Category Abstract}
+\author{Mikita Kukavenka}
+\date\today
+
+\begin{document}
+\maketitle
+$\idarrow asdaasd$
+$\idarrow{asd}asd$
+
+\begin{defn}
+	A \emph{category} $\cat{C}$ consists of
+	\begin{itemize}
+		\item a collection of objects: $A$, $B$, $C$, \ldots
+		\item a collection of arrows: $f$, $g$, $h$, \ldots
+		\item f o r each arrow $ f $ o b j e c t s $\domain{ f }$ and
+		$\codomain{f}$ called the \emph{domain} and
+		\emph{codomain} of $f$. If $\domain{f}=A$ and
+		$\codomain{f}=B$ , we also write $f:A\to B$,
+		\item given $f:A\to B$ and $g:B\to C$ , so that
+		$\domain{g}=\codomain{f}$ , there is an arrow
+		$ g\circ f:A\to C$ ,
+		\item an arrow $\idarrow[A ] : A\to A$ for every
+		object $A$ of $\cat{C}$ ,
+	\end{itemize}
+	such that
+	\begin{description}
+		\item [(Associative law)] for every $f :A\to B$ ,
+		$g :B\to C$ and $h :C\to C$ we have
+		\begin{equation}
+			h\circ ( g\circ f )=(h\circ g )\circ f ,
+		\end{equation}
+		\item [(Unit laws)] for every $ f :A\to B$ we have
+		\begin{equation}
+			f \circ\idarrow[A] = f= \idarrow[B] \circ f .
+		\end{equation}
+	\end{description}
+\end{defn}
+
+\begin{equation}
+	\begin{tikzcd}
+		A \arrow [r, "f"]
+		  \arrow [dr, swap, "g \circ f"]
+		  &
+		B \arrow [dr, "g \circ h"]
+		  \arrow [d, swap , "g"]
+		  \\
+		  {}&
+		C \arrow [r, swap, "h"]
+		  &
+		D
+	\end{tikzcd}
+\end{equation}
+
+\begin{tikzcd}[cells={nodes={}}]
+\arrow[loop left, distance=3em, start anchor={[yshift=-1ex]west}, end anchor={[yshift=1ex]west}]{}{\mathrm{id}_A} \arrow{r} A 
+& B\times C\arrow[loop right, distance=3em, start anchor={[yshift=1ex]east}, end anchor={[yshift=-1ex]east}]{}{\mathrm{id}_{B\times C}} 
+\end{tikzcd}
+\end{document}
