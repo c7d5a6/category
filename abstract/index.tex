@@ -1,6 +1,13 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
+%\special{papersize=148mm,210mm}% it is A5 paper size, I got from
+
 \usepackage{amssymb, amsthm, amsmath}
 \usepackage{tikz-cd}
+
+%\usepackage[russian, english]{babel}
+\usepackage{fontspec}
+
+\setmainfont{EB Garamond}
 
 \newcommand {\cat}{%
 	\mathbf%
@@ -16,7 +23,7 @@
 }
 
 \theoremstyle{definition}
-\newtheorem{defn}{Definition}[section]
+\newtheorem{defn}{Определение}[section]
 \newtheorem{ex}{Exercise}
 
 \title{Category Abstract}
@@ -76,4 +83,11 @@ $\idarrow{asd}asd$
 \arrow[loop left, distance=3em, start anchor={[yshift=-1ex]west}, end anchor={[yshift=1ex]west}]{}{\mathrm{id}_A} \arrow{r} A 
 & B\times C\arrow[loop right, distance=3em, start anchor={[yshift=1ex]east}, end anchor={[yshift=-1ex]east}]{}{\mathrm{id}_{B\times C}} 
 \end{tikzcd}
+
+
+\begin{equation}
+\begin{tikzcd}
+	A \arrow [loop right, "asd"] \arrow [loop right, distance=5em, "asd22"] \arrow [loop right, distance=10em, "asd22asd"]
+\end{tikzcd}
+\end{equation}
 \end{document}
