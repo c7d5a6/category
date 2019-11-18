@@ -11,3 +11,5 @@
 ### Tex category formatting
 
 http://www.andrew.cmu.edu/user/jonasf/80-413-713/documents/LaTeX_howto.pdf
+
+http://ctan.math.washington.edu/tex-archive/graphics/pgf/contrib/tikz-cd/tikz-cd-doc.pdf
